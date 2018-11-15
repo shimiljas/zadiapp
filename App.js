@@ -18,7 +18,12 @@ export default class App extends Component {
     return (
       <Router>
         <Stack key="root">
-          <Scene key="home" component={ContentContainer} />
+          <Scene
+            key="home"
+            component={ContentContainer}
+            title={"Zadi Boutique"}
+            titleStyle={{ textAlign: "center", flex: 1 }}
+          />
           <Scene key="poductlist" component={ProductList} />
           <Scene key="detail" component={Productdetails} />
         </Stack>

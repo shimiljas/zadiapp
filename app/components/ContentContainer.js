@@ -17,15 +17,18 @@ export default class ContentContainer extends React.Component {
     return (
       <ScrollView style={{ flex: 1 }}>
         <View style={{ width, height: 180, backgroundColor: "red" }}>
-          <Swiper autoplay style={styles.wrapper}>
-            <View style={styles.slide1}>
-              <Text style={styles.text}>Hello Swiper</Text>
+          <Swiper style={styles.wrapper} loop={true} autoplay={true}>
+            <View style={styles.slide}>
+              <Image style={styles.image} source={require("../img/one.jpg")} />
             </View>
-            <View style={styles.slide2}>
-              <Text style={styles.text}>Beautiful</Text>
+            <View style={styles.slide}>
+              <Image style={styles.image} source={require("../img/two.jpg")} />
             </View>
-            <View style={styles.slide3}>
-              <Text style={styles.text}>And simple</Text>
+            <View style={styles.slide}>
+              <Image
+                style={styles.image}
+                source={require("../img/three.jpg")}
+              />
             </View>
           </Swiper>
         </View>
@@ -139,6 +142,11 @@ const styles = StyleSheet.create({
     padding: 5,
     flex: 0.5
   },
+  slide: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "transparent"
+  },
   column2: {
     padding: 2,
 
@@ -172,6 +180,12 @@ const styles = StyleSheet.create({
   text: {
     color: "#fff",
     fontSize: 30,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: "Abel",
+    fontStyle: "italic"
+  },
+  image: {
+    width,
+    flex: 1
   }
 });
