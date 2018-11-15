@@ -12,8 +12,16 @@ import { Router, Stack, Scene } from "react-native-router-flux";
 import Productdetails from "./app/components/productdetails";
 import ContentContainer from "./app/components/ContentContainer";
 import ProductList from "./app/components/Productlist";
-
+import SplashScreen from "react-native-smart-splash-screen";
 export default class App extends Component {
+  componentWillMount = () => {
+    SplashScreen.close({
+      animationType: SplashScreen.animationType.scale,
+      duration: 850,
+      delay: 500
+    });
+  };
+
   render() {
     return (
       <Router>
@@ -24,7 +32,12 @@ export default class App extends Component {
             title={"Zadi Boutique"}
             titleStyle={{ textAlign: "center", flex: 1 }}
           />
-          <Scene key="poductlist" component={ProductList} />
+          <Scene
+            key="poductlist"
+            component={ProductList}
+            titleStyle={{ color: "white" }}
+            navBarButtonColor={{ color: "#003300" }}
+          />
           <Scene key="detail" component={Productdetails} />
         </Stack>
       </Router>
